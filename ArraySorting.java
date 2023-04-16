@@ -14,9 +14,15 @@ public class ArraySorting {
      for (int i=0;i<5;i++) {
     	 System.out.print(arr[i]+" ");
      }
+     int sum=0;
 
+     for (int i=0;i<5;i++) {
+    	 sum = sum+ arr[i];
     	
+     }
+    	System.out.printf("\nThe Sum of the Array is %d",sum);
+    	System.out.printf("\nThe Average of the Array is %.2f",(double)sum/5);
+
     }
 	}
-
 
