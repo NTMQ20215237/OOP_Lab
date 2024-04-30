@@ -27,4 +27,17 @@ Kẻ tấn công thêm một bình luận chứa mã JavaScript độc hại và
 *"Để bảo vệ khỏi các cuộc tấn công XSS được lưu trữ, hãy đảm bảo mọi nội dung động đến từ kho lưu trữ dữ liệu đều không thể được sử dụng để chèn JavaScript vào một trang."*
 ***Đây là yêu cầu cốt lõi***
 ### Escape Dynamic Content
+Các cuộc tấn công XSS sử dụng cách xử lý không đúng đối với nội dung động **(Dynamic Content)** được lấy từ một cơ sở dữ liệu backend. Kẻ tấn công lạm dụng một trường có thể chỉnh sửa bằng cách chèn mã JavaScript, sau đó mã này được đánh giá trong trình duyệt khi một người dùng khác truy cập trang đó.  
+
+Vì vậy, hiếm khi bạn muốn người dùng của mình tạo ra đoạn mã HTML chưa được xử lý **(raw HTML)**. Thay vào đó, bạn nên *tránh thoát tất cả nội dung động* được lấy từ cơ sở dữ liệu, để trình duyệt biết rằng nó cần được xử lý như là nội dung của các thẻ HTML, không phải là HTML chưa xử lý.  
+
+Việc thoát nội dung động thường bao gồm việc thay thế các ký tự quan trọng bằng mã HTML entities:
+
+|Character|	Encoding|  
+|:--------|:-------|
+|<        |	&#60   |  
+|>        |	&#62   |  
+|&        |	&#38   |  
+|"        |	&#34   |  
+|'        |	&#39   |  
 
